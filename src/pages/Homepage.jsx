@@ -1,4 +1,4 @@
-import PageNav from "./PageNav";
+import PageNav from "../components/PageNav";
 
 
 export default function Homepage() {
