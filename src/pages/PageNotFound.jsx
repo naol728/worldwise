@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Pricing() {
+export default function NotFound() {
   return (
     <div>
-       pricing 
+      page is not found :)
     </div>
   )
 }
