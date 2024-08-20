@@ -1,8 +1,8 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Homepage from './pages/Homepage';
-import Pricing  from './pages/Pricing ';
-import Product   from './pages/Product  ';
+import Pricing from './pages/Pricing'
+import Product   from './pages/Product';
 import AppLayout from './pages/AppLayout';
 import PageNotFound from './pages/PageNotFound';
 export default function App() {
