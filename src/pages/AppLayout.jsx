@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function NotFound() {
+export default function AppLayout() {
   return (
     <div>
-      page is not found :)
+      this is app layout
     </div>
   )
 }
