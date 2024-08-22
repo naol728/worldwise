@@ -1,10 +1,10 @@
-import AppNav from "../components/AppNav";
+import SideBar from "../components/SideBar";
 
 export default function AppLayout() {
   return (
     <div>
-      <AppNav />
-      app 
+      <SideBar />
+     
     </div>
   )
 }
