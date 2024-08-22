@@ -1,5 +1,6 @@
-import React from 'react'
+import style from './Sidebar.module.css'
 import Logo from './Logo'
+import AppNav from './AppNav'
 export default function SideBar() {
   return (
     <div className={style.Sidebar}>
