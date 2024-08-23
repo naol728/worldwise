@@ -3,7 +3,7 @@ import Logo from './Logo'
 import AppNav from './AppNav'
 export default function SideBar() {
   return (
-    <div className={style.Sidebar}>
+    <div className={style.sidebar}>
       <Logo />
       <AppNav />
 
