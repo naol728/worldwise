@@ -6,12 +6,9 @@ export default function SideBar() {
     <div className={style.sidebar}>
       <Logo />
       <AppNav />
-
       <p>list of cites</p>
-
-
       <footer className={style.footer}>
-           <p>
+           <p className={style.copyright}>
             &copy; copyright {new Date().getFullYear()} by Worldwise Inc.
            </p>
       </footer>
