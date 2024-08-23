@@ -12,11 +12,12 @@ export default function App() {
     <div>
     <BrowserRouter>
      <Routes>
-         <Route path='/' element={<Homepage />}/>
+         <Route index element={<Homepage />}/>
          <Route path='/pricing' element={<Pricing />}/>
          <Route path='/product' element={<Product   />}/>
          <Route path='/login' element={<Login   />}/>
          <Route path='/app' element={<AppLayout />}>
+            <Route index element={<p>List of cites</p>}/>
             <Route path='cites' element={<p>list of cites</p>} />
             <Route path='counties' element={<p>list of counties</p>} />
             <Route path='form' element={<p>form</p>} />

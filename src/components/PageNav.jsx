@@ -6,7 +6,7 @@ export default function PageNav() {
   return (
     <nav className={style.nav}>
 
-      <Logo />
+      <NavLink to="/"><Logo /></NavLink> 
       <ul>
         <li>
             <NavLink to='/pricing' >pricing</NavLink>
