@@ -6,6 +6,7 @@ import Product   from './pages/Product';
 import AppLayout from './pages/AppLayout';
 import PageNotFound from './pages/PageNotFound';
 import Login from './pages/Login';
+import CityList from './components/CityList';
 import './index.css'
 export default function App() {
   return ( 
@@ -17,9 +18,9 @@ export default function App() {
          <Route path='/product' element={<Product   />}/>
          <Route path='/login' element={<Login   />}/>
          <Route path='/app' element={<AppLayout />}>
-            <Route index element={<p>List of cites</p>}/>
-            <Route path='cites' element={<p>list of cites</p>} />
-            <Route path='counties' element={<p>list of counties</p>} />
+            <Route index element={<CityList />}/>
+            <Route path='cites' element={<CityList />} />
+            <Route path='countries' element={<p>list of counties</p>} />
             <Route path='form' element={<p>form</p>} />
          </Route>
          <Route path='/*' element={<PageNotFound />}/>
