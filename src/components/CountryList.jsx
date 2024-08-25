@@ -10,7 +10,7 @@ function CountryList({cities,isLoading}) {
       <Message message="Add your first city by clicking on a city on the map" />
     )}
     const country=cities.reduce((arr,city)=>{
-        if(!arr.map(e=>e.city).includes(city.country))
+        if(!arr.map(e=>e.country).includes(city.country))
            return [
         ...arr,{country:city.country,emoji:city.emoji}] 
         else return arr;
