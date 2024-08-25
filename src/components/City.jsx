@@ -1,5 +1,7 @@
 // import styles from "./City.module.css";
 
+import { useParams, useSearchParams } from "react-router-dom";
+
 // const formatDate = (date) =>
 //   new Intl.DateTimeFormat("en", {
 //     day: "numeric",
@@ -18,9 +20,19 @@ function City() {
   // };
 
   // const { cityName, emoji, date, notes } = currentCity;
-
+  const {id}=useParams();
+  const [searchparams]=useSearchParams()
+  const lat=searchparams.get("lat")
+  const lng=searchparams.get("lug")
   return (
-    <div>city</div>
+    <div>
+      
+      <h1>city {id}</h1>
+      <p>
+        postion :{lng} ,{lat}
+      </p>
+      
+      </div>
     // <div className={styles.city}>
     //   <div className={styles.row}>
     //     <h6>City name</h6>
