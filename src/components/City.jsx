@@ -3,6 +3,7 @@ import styles from "./City.module.css";
 import { useParams } from "react-router-dom";
 import { useCites } from "../contexts/CitiesContext";
 import { useEffect } from "react";
+import BackButton from "./BackButton";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -59,6 +60,10 @@ const { cityName, emoji, date, notes } = currentcity;
           Check out {cityName} on Wikipedia &rarr;
         </a>
       </div>
+      <div>
+      <BackButton />
+      </div>
+      
     </div>
    
   );
