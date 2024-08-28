@@ -1,28 +1,42 @@
-// import { useNavigate} from 'react-router-dom'
-import{MapContainer,TileLayer,Marker,Popup} from 'react-leaflet'
+import {useSearchParams} from 'react-router-dom'
+import{MapContainer,TileLayer,Marker,Popup, useMap} from 'react-leaflet'
 
 import style from './Map.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useCites } from '../contexts/CitiesContext'
 
 export default function Map() {
-  // const [searchparams]=useSearchParams()
-  const [ mappostion]=useState([9.0192,38.7525])
-  // const lat=searchparams.get("lat")
-  // const lng=searchparams.get("lug")
+  const [searchparams]=useSearchParams()
+  const {cities} =useCites()
+  const [ mappostion,setMappostion]=useState([40,0])
+  const maplat=searchparams.get("lat")
+  const maplng=searchparams.get("lng")
+  useEffect(
+    function (){
+     if(maplat && maplng) setMappostion([maplat,maplng])
+    },[maplat,maplng]
+  )
   // const navigate=useNavigate()
   return (
     <div className={style.mapContainer} >
-      <MapContainer center={mappostion} zoom={13} scrollWheelZoom={true} className={style.map} >
+      <MapContainer center={mappostion} zoom={2} scrollWheelZoom={true} className={style.map} >
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
     />
-    <Marker position={mappostion}>
+   {cities.map((city)=> <Marker position={[city.position.lat,city.position.lng]} key={city.id}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+         <span>{city.emoji}</span> <span>{city.cityName}</span>
       </Popup>
     </Marker>
-  </MapContainer>
+  ) }
+ <Changecenter position={mappostion} />
+  </MapContainer> 
     </div>
   )
+}
+function Changecenter({position}){
+  const map=useMap();
+  map.setView(position)
+  return null;
 }
