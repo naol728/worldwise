@@ -1,51 +1,39 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": "17806751"
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443179"
-    },
-    {
-      "id": "929e",
-      "cityName": "Pescueza",
+      "id": "ace9",
+      "cityName": "Addis Ababa",
       "country": "",
       "emoji": "",
-      "date": "2024-08-29T20:40:05.327Z",
+      "date": "2024-08-29T22:48:08.198Z",
       "notes": "",
       "position": {
-        "lat": "39.8426760445864",
-        "lng": "-6.572048497396869"
+        "lat": "9.01577277486197",
+        "lng": "38.84513613265177"
+      }
+    },
+    {
+      "id": "cdeb",
+      "cityName": "Gonder",
+      "country": "",
+      "emoji": "",
+      "date": "2024-08-29T22:48:35.774Z",
+      "notes": "",
+      "position": {
+        "lat": "12.640814463455254",
+        "lng": "37.41682895105852"
+      }
+    },
+    {
+      "id": "2c17",
+      "cityName": "Dalol",
+      "country": "",
+      "emoji": "",
+      "date": "2024-08-29T22:49:03.911Z",
+      "notes": "",
+      "position": {
+        "lat": "14.179631809027619",
+        "lng": "39.70200633239432"
       }
     }
   ]
