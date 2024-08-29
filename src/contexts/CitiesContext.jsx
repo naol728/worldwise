@@ -39,6 +39,28 @@ function CitiesProvider({children}) {
        setIsloading(false)
      }
    }
+
+  async function createnewcity(newCity){
+    try { 
+     setIsloading(true)
+     const res =await fetch(`http://localhost:8000/cities/`,{
+      method: "POST",
+      body: JSON.stringify(newCity),
+      headers: {
+        "Content-Type": "application/json",
+      },
+     })
+     const data=await res.json();
+     setCities(data)
+    
+    }
+     catch{
+       alert("there is an error loading the data")
+     }
+     finally{
+       setIsloading(false)
+     }
+   }
   
   
   return (
@@ -49,6 +71,7 @@ function CitiesProvider({children}) {
         isLoading,
         currentcity,
         getcity,
+        createnewcity,
       }
     }
     
@@ -63,4 +86,4 @@ function useCites(){
     throw new Error("using of context out of context provider"); 
   return context;
 }
-export {CitiesProvider,useCites};
+export  {CitiesProvider,useCites};
