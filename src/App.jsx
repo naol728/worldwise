@@ -13,10 +13,12 @@ import City from './components/City';
 import Form from './components/Form';
 import {CitiesProvider} from './contexts/CitiesContext';
 import './index.css'
+import { AuthProvider } from './contexts/FakeAuthContext';
 // const BASE_URL="http://localhost:8000/cities";
 export default function App() {
 
   return ( 
+    <AuthProvider>
     <CitiesProvider>
     <BrowserRouter>
      <Routes>
@@ -35,6 +37,7 @@ export default function App() {
      </Routes>
     </BrowserRouter>
     </CitiesProvider>
+    </AuthProvider>
   )
 }
 
