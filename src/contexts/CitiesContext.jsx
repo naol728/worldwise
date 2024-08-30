@@ -10,6 +10,9 @@ function CitiesProvider({children}) {
     function (){
      async function fechcites(){
        try { 
+
+
+
         setIsloading(true)
         const res =await fetch(`http://localhost:8000/cities`)
         const data=await res.json();
