@@ -79,6 +79,7 @@ function CitiesProvider({children}) {
   )
   
   async function getcity(id){
+    if(id==currentcity.id) return ;
     dispach({type:"Loading"})
     try { 
    
