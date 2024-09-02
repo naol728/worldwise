@@ -13,11 +13,9 @@
   gap: 7rem;
   align-items: center;
 }
-
 .product img {
   width: 100%;
 }
-
 .product h2 {
   font-size: 4rem;
   line-height: 1.2;
@@ -28,7 +26,6 @@
   font-size: 1.6rem;
   margin-bottom: 2rem;
 }
-
 .product section a {
   margin-top: 2rem;
 }
