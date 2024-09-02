@@ -1,4 +1,4 @@
-import { act } from "react"
+import { act, useCallback } from "react"
 import { createContext, useContext, useEffect, useReducer, useState } from "react"
 const CitesContext=createContext()
 
@@ -78,7 +78,7 @@ function CitiesProvider({children}) {
     },[]
   )
   
-  async function getcity(id){
+  const getcity=useCallback( async function getcity(id){
     if(id==currentcity.id) return ;
     dispach({type:"Loading"})
     try { 
@@ -92,7 +92,7 @@ function CitiesProvider({children}) {
       dispach({type:"error",payload:"there is an error while loading the city data "})
      }
    }
-
+  )
   async function createnewcity(newCity){
     dispach({type:"Loading"})
     try { 
