@@ -1,19 +1,24 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
-
-import Homepage from './pages/Homepage';
-import Pricing from './pages/Pricing'
-import Product   from './pages/Product';
-import AppLayout from './pages/AppLayout';
-import PageNotFound from './pages/PageNotFound';
-import Login from './pages/Login';
 import CityList from './components/CityList';
 import CountryList from './components/CountryList';
 import City from './components/City';
 import Form from './components/Form';
+import SpinnerFullPage from './components/SpinnerFullPage'
 import {CitiesProvider} from './contexts/CitiesContext';
 import './index.css'
 import { AuthProvider } from './contexts/FakeAuthContext';
+
+
+
+const Homepage=lazy(()=>import ('./pages/Homepage'))
+const Pricing=lazy(()=>import ('./pages/Pricing'))
+const Product=lazy(()=>import ('./pages/Product'))
+const AppLayout=lazy(()=>import ('./pages/AppLayout'))
+const PageNotFound=lazy(()=>import ('./pages/PageNotFound'))
+const Login=lazy(()=>import ('./pages/Login'))
+// const BASE_URL="http://localhost:8000/cities";
 // const BASE_URL="http://localhost:8000/cities";
 export default function App() {
 
@@ -21,6 +26,7 @@ export default function App() {
     <AuthProvider>
     <CitiesProvider>
     <BrowserRouter>
+    <Suspense fallback={<SpinnerFullPage/>} >
      <Routes>
          <Route index element={<Homepage />}/>
          <Route path='/pricing' element={<Pricing />}/>
@@ -35,7 +41,9 @@ export default function App() {
          </Route>
          <Route path='/*' element={<PageNotFound />}/>
      </Routes>
+     </Suspense>
     </BrowserRouter>
+
     </CitiesProvider>
     </AuthProvider>
   )

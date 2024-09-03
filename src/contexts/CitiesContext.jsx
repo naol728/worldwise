@@ -102,7 +102,7 @@ function CitiesProvider({children}) {
       headers: {
         "Content-Type": "application/json",
       },
-     })
+     },[currentcity.id])
      const data=await res.json();
       dispach({type:"city/created",payload:data})
     
