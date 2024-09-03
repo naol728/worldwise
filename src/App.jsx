@@ -31,7 +31,6 @@ export default function App() {
          <Route path='/product' element={<Product   />}/>
          <Route path='/login' element={<Login   />}/>
          <Route path='/app' element={
-          
           <ProtectedRoute>
             <AppLayout />
           </ProtectedRoute>
