@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes,ProtectedRoute} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 import CityList from './components/CityList';
@@ -31,9 +31,7 @@ export default function App() {
          <Route path='/product' element={<Product   />}/>
          <Route path='/login' element={<Login   />}/>
          <Route path='/app' element={
-          <ProtectedRoute>
             <AppLayout />
-          </ProtectedRoute>
           
           }>
             <Route index element={<CityList />}/>
