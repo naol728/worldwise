@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes,ProtectedRoute} from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 import CityList from './components/CityList';
@@ -18,8 +18,6 @@ const Product=lazy(()=>import ('./pages/Product'))
 const AppLayout=lazy(()=>import ('./pages/AppLayout'))
 const PageNotFound=lazy(()=>import ('./pages/PageNotFound'))
 const Login=lazy(()=>import ('./pages/Login'))
-// const BASE_URL="http://localhost:8000/cities";
-// const BASE_URL="http://localhost:8000/cities";
 export default function App() {
 
   return ( 
@@ -32,7 +30,13 @@ export default function App() {
          <Route path='/pricing' element={<Pricing />}/>
          <Route path='/product' element={<Product   />}/>
          <Route path='/login' element={<Login   />}/>
-         <Route path='/app' element={<AppLayout />}>
+         <Route path='/app' element={
+          
+          <ProtectedRoute>
+            <AppLayout />
+          </ProtectedRoute>
+          
+          }>
             <Route index element={<CityList />}/>
             <Route path='cites' element={<CityList   />} />
             <Route path='cites/:id' element={<City />} />
